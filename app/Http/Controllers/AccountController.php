@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AccountController extends Controller
 {
@@ -33,8 +35,44 @@ class AccountController extends Controller
             return view('page.index');
         }
         else{
-            return view('page.login');
+            return redirect()->back()->with('error-login','Sai tài khoản hoặc tên đăng nhập');
         }
         
+    }
+
+    public function getChangePassword()
+    {
+        return view('page.changePassword');
+    }
+
+    public function postCheckEmail(Request $req)
+    {
+        $checkEmail = User::where('email',$req->email)->first();
+        if($checkEmail){
+            return view('page.confirmPassword')->with('checkEmail', $checkEmail);
+        }else{
+            return redirect()->route('changepassword')->with('error-changepassword','Sai email');
+        }
+       
+    }
+
+    public function getConfirmPassword()
+    {
+        
+        return view('page.confirmPassword');
+    }
+
+    public function postConfirmPassword(Request $req)
+    {
+        $user = User::where('email',$req->email)->first();
+        $user->password = Hash::make($req->newPass);
+        $user->save();
+        return view('page.confirmPassword')->with('checkEmail', $user)->with('mes','Cập nhật thành công');
+    }
+
+    public function getInfo()
+    {
+        
+        return view('page.personalAccount');
     }
 }

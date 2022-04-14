@@ -1,40 +1,523 @@
-.login{
+*{
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    box-sizing: border-box;
+}
+
+
+.left-login{
     position: relative;
-    width: 1300px;
-    height: 800px;
-    background: white;
+    width: 1400px;
+    height: 900px;
+    background: #EAEAEC;
     border-radius: 20px;
    
 }
+
 .logo{
     position: absolute;
     width: 200px;  
     left: 180px;
     top: 82px;
 }
+
 .inputBox{
-position: static;
-width: 133px;
-height: 27px;
-left: 0px;
-top: 0px;
-/* 18/18 Reg */
-font-family: 'Nunito';
-font-style: normal;
-font-weight: 400;
-font-size: 18px;
-line-height: 27px;
-/* identical to box height, or 150% */
-color: #37474F;
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-margin: 4px 0px;
+    position: static;
+    width: 133px;
+    height: 27px;
+    left: 0px;
+    top: 0px;
+    /* 18/18 Reg */
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height, or 150% */
+    color: #37474F;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 4px 0px;
 }
 
-/* .form{
+
+
+.form{
     top:310px;
     left: 94px;
+}
+
+.submit{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    /* position: absolute; */
+    top: 511px;
+    left: 215px;
+    width: 162px;
+    height: 40px;
+    
+    /* padding: 10px 24px;
+    border: white;
+    cursor: pointer; */
+
+    background: #FF9138;
+    box-shadow: 0px 0px 6px #E7E9F2;
+    border-radius: 8px;
+}
+/* .submit:hover{
+    border: 1px solid yellow;
 } */
 
+.submit span{
+    position: static;
+    width: 82px;
+    height: 24px;
+    left: 40px;
+    top: 8px;
+    /* 16/16 Bold */
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    /* white */
+    color: #FFFFFF;
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 8px;
+}
+
+.form-control{ 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 270px 10px 12px;
+
+    position: static;
+    width: 400px;
+    height: 44px;
+    left: 0px;
+    top: 31px;
+
+    /* white */
+
+    background: #FFFFFF;
+    /* Gray/$-gray-100 */
+
+    border: 1.5px solid #D4D4D7;
+    box-sizing: border-box;
+    border-radius: 8px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 4px 0px;
+}
+
+.forgetpassword{
+    /* position: absolute; */
+    width: 102px;
+    height: 21px;
+    left: 94px;
+    top: 491px;
+
+    /* 14/14 Reg */
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height, or 150% */
+
+
+    /* Red */
+
+    color: #E73F3F;
+    
+ }
+
+ .error-login{
+    position: absolute;
+    width: 209px;
+    height: 21px;
+    left: 0px;
+    top: 180px;
+    
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;   
+    color: #E73F3F;
+ }
+
+ .error-forgetpassword{
+    position: absolute;
+    width: 102px;
+    height: 21px;
+    left: 146px;
+    top: 264px;
+    
+    /* 14/14 Reg */
+    
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height, or 150% */
+    
+    
+    /* Red */
+    
+    color: #E73F3F;
+ }
+
+ .right-login{
+    position: absolute;
+    width: 848px;
+    height: 900px;
+    left: 592px;
+    top: 0px;
+
+    /* White */
+
+    background: #FFFFFF;
+ }
+
+
+ .image-right
+{
+    position: relative;
+    top: 100px;
+    left: 50px;
+}
+
+.system-title
+{
+    
+    width: 142px;
+    height: 54px;
+    left: 1046px;
+    top: 407px;
+
+    /* 34/34 Reg */
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 51px;
+    /* or 150% */
+
+    text-align: center;
+
+    /* Orange/$-Orange-500 */
+
+    color: #FF7506;
+}
+
+.system-name{
+    width: 361px;
+    height: 54px;
+    left: 1016px;
+    top: 454px;
+
+    /* 36/36 Xbold */
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 54px;
+    /* identical to box height, or 150% */
+
+    text-align: center;
+
+    /* Orange/$-Orange-500 */
+
+    color: #FF7506;
+}
+
+.tittle-changepasword{
+    
+    left: 10.51%;
+    right: 73.68%;
+    top: 32.51%;
+    bottom: 57.53%;
+
+    /* 22/22 Bold */
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 33px;
+    /* or 150% */
+
+
+    /* Gray/$-gray-500 */
+
+    color: #282739;
+}
+
+
+
+.inputBoxEmail{
+    position: absolute;
+    width: 396px;
+    height: 27px;
+    left: 20px;
+    top: 20px;
+
+    /* 18/18 Reg */
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height, or 150% */
+
+
+    color: #37474F;
+}
+
+.email{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 270px 10px 12px;
+
+    position: absolute;
+    width: 400px;
+    height: 44px;
+    left: 10px;
+    top: 50px;
+
+    /* white */
+
+    background: #FFFFFF;
+    /* Gray/$-gray-100 */
+
+    border: 1.5px solid #D4D4D7;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.continue-button{
+    /* Auto layout */
+
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 24px;
+    position: absolute;
+    width: 162px;
+    height: 40px;
+    left: 204px;
+    top: 130px;
+    /* Orange/$-Orange-400 */
+    background: #FF9138;
+    /* down */
+    box-shadow: 0px 0px 6px #E7E9F2;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+}
+
+.cancel-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 24px;
+    position: absolute;
+    width: 162px;
+    height: 40px;
+    left: 28px;
+    top: 130px;
+    /* Orange/$-Orange-400 */
+    border: 1px solid #FF9138;
+    box-sizing: border-box;
+    /* down */
+    filter: drop-shadow(0px 0px 6px #E7E9F2);
+    border-radius: 8px;
+    color: #FF9138;
+    text-decoration: none;
+  
+}
+
+.inputBoxPass{
+    position: absolute;
+    width: 396px;
+    height: 27px;
+    left: 20px;
+    top: 20px;
+
+    /* 18/18 Reg */
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height, or 150% */
+
+
+    color: #37474F;
+}
+
+.inputBoxPass2{
+    position: absolute;
+    width: 396px;
+    height: 27px;
+    left: 20px;
+    top: 120px;
+
+    /* 18/18 Reg */
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height, or 150% */
+
+
+    color: #37474F;
+}
+
+.form-control-pass{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 16px 10px 12px;
+
+    position: absolute;
+    width: 370px;
+    height: 44px;
+    left: 25px;
+    top: 50px;
+
+    /* white */
+
+    background: #FFFFFF;
+    /* Gray/$-gray-100 */
+
+    border: 1.5px solid #D4D4D7;
+    box-sizing: border-box;
+    border-radius: 8px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 4px 0px;
+}
+
+.form-control-pass2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 16px 10px 12px;
+
+    position: absolute;
+    width: 370px;
+    height: 44px;
+    left: 25px;
+    top: 150px;
+
+    /* white */
+
+    background: #FFFFFF;
+    /* Gray/$-gray-100 */
+
+    border: 1.5px solid #D4D4D7;
+    box-sizing: border-box;
+    border-radius: 8px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 4px 0px;
+}
+
+.submit-password{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    /* position: absolute; */
+    top: 551px;
+    left: 215px;
+    width: 162px;
+    height: 40px;
+    
+    /* padding: 10px 24px;
+    border: white;
+    cursor: pointer; */
+
+    background: #FF9138;
+    box-shadow: 0px 0px 6px #E7E9F2;
+    border-radius: 8px;
+}
+
+.submit-password span{
+    position: static;
+    width: 82px;
+    height: 24px;
+    left: 40px;
+    top: 8px;
+    /* 16/16 Bold */
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    /* white */
+    color: #FFFFFF;
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 8px;
+}
+
+.update-success{
+    position: absolute;
+    width: 209px;
+    height: 21px;
+    left: 0px;
+    top: 210px;
+    
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;   
+    color: #3fe7c0;
+ }
+
+ 

@@ -27,6 +27,31 @@ Route::post('login',[
     'uses'=>'App\Http\Controllers\AccountController@postLogin'
 ]);
 
+Route::get('changepassword',[
+    'as'=>'changepassword',
+    'uses'=>'App\Http\Controllers\AccountController@getChangePassword'
+]);
+
+Route::post('checkemail',[
+    'as'=>'checkemail',
+    'uses'=>'App\Http\Controllers\AccountController@postCheckEmail'
+]);
+
+Route::get('confirmpassword',[
+    'as'=>'confirmpassword',
+    'uses'=>'App\Http\Controllers\AccountController@getConfirmPassword'
+]);
+
+Route::post('confirmpassword',[
+    'as'=>'confirmpassword',
+    'uses'=>'App\Http\Controllers\AccountController@postConfirmPassword'
+]);
+
+Route::get('personnalAccount',[
+    'as'=>'personnalAccount',
+    'uses'=>'App\Http\Controllers\AccountController@getInfo'
+]);
+
 Route::get('index',[
     'as'=>'index',
     'uses'=>'App\Http\Controllers\HomeController@index'
