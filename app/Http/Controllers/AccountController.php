@@ -32,7 +32,8 @@ class AccountController extends Controller
         $results = array('username'=>$req->username,'password'=>$req->password);
         if(Auth::attempt($results))
         {
-            return view('page.index');
+            //return view('page.personalAccount');
+             return redirect()->route('personnalAccount');
         }
         else{
             return redirect()->back()->with('error-login','Sai tài khoản hoặc tên đăng nhập');
@@ -74,5 +75,11 @@ class AccountController extends Controller
     {
         
         return view('page.personalAccount');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return view('page.login');
     }
 }

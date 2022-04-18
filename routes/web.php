@@ -52,6 +52,11 @@ Route::get('personnalAccount',[
     'uses'=>'App\Http\Controllers\AccountController@getInfo'
 ]);
 
+Route::get('logout',[
+    'as'=>'logout',
+    'uses'=>'App\Http\Controllers\AccountController@logout'
+]);
+
 Route::get('index',[
     'as'=>'index',
     'uses'=>'App\Http\Controllers\HomeController@index'
@@ -59,5 +64,30 @@ Route::get('index',[
 
 Route::get('device',[
     'as'=>'device',
-    'uses'=>'App\Http\Controllers\HomeController@device'
+    'uses'=>'App\Http\Controllers\DeviceController@device'
+]);
+
+Route::get('searchDevice',[
+    'as'=>'searchDevice',
+    'uses'=>'App\Http\Controllers\DeviceController@searchDevice'
+]);
+
+Route::get('addDevice',[
+    'as'=>'addDevice',
+    'uses'=>'App\Http\Controllers\DeviceController@getAddDevice'
+]);
+
+Route::post('addDevice',[
+    'as'=>'addDevice',
+    'uses'=>'App\Http\Controllers\DeviceController@postAddDevice'
+]);
+
+Route::get('detailsDevice/{id}',[
+    'as'=>'detailsDevice',
+    'uses'=>'App\Http\Controllers\DeviceController@getDetailsDevice'
+]);
+
+Route::get('editDevice',[
+    'as'=>'editDevice',
+    'uses'=>'App\Http\Controllers\DeviceController@getEditDevice'
 ]);

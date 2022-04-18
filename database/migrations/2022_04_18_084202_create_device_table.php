@@ -21,7 +21,9 @@ class CreateDeviceTable extends Migration
             $table->integer('statusAction');
             $table->integer('statusConnect');
             $table->string('service')->nullable();
-            
+            $table->string('category')->nullable();
+            $table->string('username')->nullable();
+            $table->string('password')->nullable();
             
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();

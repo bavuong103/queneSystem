@@ -11,8 +11,6 @@ class HomeController extends Controller
         return view('page.index');
     }
 
-    public function device(){
-        return view('page.device');
-    }
+    
     
 }

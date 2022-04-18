@@ -17,30 +17,38 @@ class DeviceSeeder extends Seeder
         //
         DB::table('device')->insert([
             [
-                'id' => 'KIO_01',
+                'id' => '1',
                 'name' => 'Kiosk',
                 'addressIP' => '192.168.1.10',
                 'statusAction' => 0,
                 'statusConnect' => 0,
                 'service' => 'Khám tim mạch, khám mắt',
+                'category' => 'Kiosk',
+                'username' => 'huy',
+                'password' => '123456',
                 
             ],
             [
-                'id' => 'KIO_02',
+                'id' => '2',
                 'name' => 'Kiosk2',
                 'addressIP' => '192.168.1.10',
                 'statusAction' => 0,
                 'statusConnect' => 0,
                 'service' => 'Khám tim mạch, khám mắt',
-                
+                'category' => 'Kiosk',
+                'username' => 'huy',
+                'password' => '123456',
             ],
             [
-                'id' => 'KIO_03',
+                'id' => '3',
                 'name' => 'Kiosk3',
                 'addressIP' => '192.168.1.10',
                 'statusAction' => 0,
                 'statusConnect' => 0,
                 'service' => 'Khám tim mạch, khám mắt',
+                'category' => 'Kiosk',
+                'username' => 'huy',
+                'password' => '123456',
             ]
         ]);
     }
