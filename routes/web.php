@@ -87,7 +87,22 @@ Route::get('detailsDevice/{id}',[
     'uses'=>'App\Http\Controllers\DeviceController@getDetailsDevice'
 ]);
 
-Route::get('editDevice',[
+Route::get('editDevice/{id}',[
     'as'=>'editDevice',
     'uses'=>'App\Http\Controllers\DeviceController@getEditDevice'
+]);
+
+Route::post('editDevice/{id}',[
+    'as'=>'editDevice',
+    'uses'=>'App\Http\Controllers\DeviceController@postEditDevice'
+]);
+
+Route::get('service',[
+    'as'=>'service',
+    'uses'=>'App\Http\Controllers\ServiceController@service'
+]);
+
+Route::get('addService',[
+    'as'=>'addService',
+    'uses'=>'App\Http\Controllers\ServiceController@getAddService'
 ]);

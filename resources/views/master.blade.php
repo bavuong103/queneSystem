@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     
-    <title>Account</title>
+    <title>Service</title>
     <base href="{{asset('')}}">
     
     <!-- Custom CSS -->
@@ -27,7 +27,7 @@
         <ul>
           <li><a href="#">Dashboard</a></li>
           <li><a href="{{route('device')}}">Thiết bị</a></li>
-          <li><a href="#">Dịch vụ</a></li>
+          <li><a href="{{route('service')}}">Dịch vụ</a></li>
           <li><a href="#">Cấp số</a></li>
           <li><a href="#">Báo cáo</a></li>
           <li><a href="#">Cài đặt hệ thống</a></li>
@@ -42,11 +42,56 @@
      
 
      @yield('content')
+
+
     
-    
+     <script src="admin/dist/js/jquery-3.3.1.min.js"></script>
+
+     {{-- sort --}}
+      <script type="text/javascript">
+        $(document).ready(function($) { 
+        //alert("hello");
+        
+
+        $('#sortAction').on('change',function(){
+          var url = $(this).val();
+          //alert(url);
+
+          if(url)
+          {
+            window.location = url;
+          }
+          return false;
+        });
+      });
+
+      </script>
+
+    <script type="text/javascript">
+      $(document).ready(function($) { 
+      //alert("hello");
+      
+
+      $('#sortConnect').on('change',function(){
+        var url = $(this).val();
+        //alert(url);
+
+        if(url)
+        {
+          window.location = url;
+        }
+        return false;
+      });
+    });
+
+    </script>
 
      
 
  </div>
 
 </body>
+
+
+
+</html>

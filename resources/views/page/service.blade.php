@@ -1,8 +1,8 @@
 @extends('master')
 @section('content')
   <div >
-    <p class="title-left"> Thiết bị > </p>
-    <p class="title-right">Danh sách thiết bị</p>
+    <p class="title-left"> Dịch vụ > </p>
+    <p class="title-right">Danh sách dịch vụ</p>
   </div>
 
   <div>
@@ -22,12 +22,10 @@
   </div>
 
   <div>
-    <p class="title-connect">Trạng thái kết nối</p>
-    <select class="select-connect" id="sortConnect">
-      <option value="{{Request::url()}}?sort_by_connect=none">Tất cả</option>
-      <option value="{{Request::url()}}?sort_by_connect=connect">Két nối</option>
-      <option value="{{Request::url()}}?sort_by_connect=no-connect">Mất kết nối</option>
-    </select>
+    <p class="title-connect">Chọn thời gian</p>
+    <input class="inputTimeIn" type="date" name="timeIn" value="" />
+    <img src="admin/assets/images/tg.png" alt="right" class="tg">
+    <input class="inputTimeOut" type="date" name="timeOut" value="" />
   </div>
 
   <div>
@@ -39,7 +37,7 @@
   </div>
 
   <div>
-    <a href="{{route('addDevice')}}"><img src="admin/assets/images/add.png" alt="right" class="add-button"></a>
+    <a href="{{route('addDevice')}}"><img src="admin/assets/images/addservice.png" alt="right" class="add-button"></a>
   </div>
 
          @if(Session::has('mes'))
@@ -51,49 +49,25 @@
       <table class="table">
           <thead>
               <tr class="">
-                  <th class="table-title"><p class="style-title">Mã thiết bị</p></th>
-                  <th class="table-title"><p class="style-title">Tên thiết bị</p></th>
-                  <th class="table-title"><p class="style-title">Địa chỉ IP</p></th>
+                  <th class="table-title2"><p class="style-title">Mã dịch vụ</p></th>
+                  <th class="table-title2"><p class="style-title">Tên dịch vụ</p></th>
+                  <th class="table-title2"><p class="style-title">Mô tả</p></th>
                   <th class="table-title2"><p class="style-title">Trạng thái hoạt động</p></th>
-                  <th class="table-title2"><p class="style-title">Trạng thái kết nối</p></th>
-                  <th class="table-title2"><p class="style-title">Dịch vụ sử dụng</p></th>
-                  <th class="table-title"></th>
-                  <th class="table-title"></th>
+                  
+                  <th class="table-title2"></th>
+                  <th class="table-title2"></th>
               </tr>
           </thead>
           <tbody>
-            @foreach ($device as $device)
-              <tr>
-                <td class="table-row">{{$device->id}}</td>
-                <td class="table-row">{{$device->name}}</td>
-                <td class="table-row">{{$device->addressIP}}</td>
-                <td class="table-row">
-                  <?php
-                    if($device->statusAction==0)
-                    {
-                      echo "<i class='fas fa-circle' style='color:red'></i>"."Ngưng hoạt động";
-                    }else{
-                      echo "<i class='fas fa-circle' style='color:green'></i>". "Hoạt động";
-                    }
-                  ?>
-                </td>
-                <td class="table-row">
-                  <?php
-                    if($device->statusConnect==1)
-                    {
-                      echo "<i class='fas fa-circle' style='color:green'></i>"."Kết nối";
-                    } 
-                    else{
-                      echo "<i class='fas fa-circle' style='color:red'></i>"."Mất kết nối";
-                    }
-                  ?>
-                </td>
-                <td class="table-row">{{$device->service}}</td>
-                <td class="table-row"><a href="{{route('detailsDevice',$device->id)}}">Chi tiết</a></td>
-                <td class="table-row"><a href="{{route('editDevice',$device->id)}}">Cập nhật</a></td>
-              </tr>
-            @endforeach
             
+            <tr>
+                <td class="table-row">sf</td>
+                <td class="table-row">f</td>
+                <td class="table-row">ff</td>
+                <td class="table-row">ff</td>
+                <td class="table-row"><a href="#">Chi tiết</a></td>
+                <td class="table-row"><a href="#">Cập nhật</a></td>
+              </tr>
             
           </tbody>
       </table>

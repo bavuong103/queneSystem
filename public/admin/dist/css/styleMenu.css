@@ -2178,3 +2178,453 @@
     box-shadow: 0px 0px 6px #E7E9F2;
     border-radius: 8px 0px 0px 8px;
 }
+
+
+.inputTimeIn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+
+    position: absolute;
+    left: 400px;
+   
+    top: 210px;
+   
+
+    background: #FFFFFF;
+   
+
+    border: 1.5px solid #D4D4D7;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.tg{
+    position: absolute;
+    left: 550px;
+    
+    top: 220px;
+    
+}
+
+.inputTimeOut{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+
+    position: absolute;
+    left: 570px;
+   
+    top: 210px;
+   
+
+    background: #FFFFFF;
+   
+
+    border: 1.5px solid #D4D4D7;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.form-control7{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px 270px 10px 12px;
+
+    position: absolute;
+    width: 553px;
+    height: 132px;
+    left: 560px;
+    top: 92px;
+
+    /* white */
+
+    background: #FFFFFF;
+    /* Gray/$-gray-100 */
+
+    border: 1.5px solid #D4D4D7;
+    box-sizing: border-box;
+    border-radius: 8px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 8px 0px;
+}
+
+.role{
+    position: absolute;
+    width: 136px;
+    height: 30px;
+    left: 24px;
+    top: 248px;
+
+    /* 20/20 Bold */
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    /* identical to box height, or 150% */
+
+
+    /* Orange/$-Orange-500 */
+
+    color: #FF7506;
+}
+
+#auto{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 24px;
+    top: 292px;
+
+    background: #FFFFFF;
+    /* Blue */
+
+    border: 1.5px solid #4277FF;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+#prefix{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 24px;
+    top: 338px;
+
+    background: #FFFFFF;
+    /* Blue */
+
+    border: 1.5px solid #4277FF;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+#surfix{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 24px;
+    top: 388px;
+
+    background: #FFFFFF;
+    /* Blue */
+
+    border: 1.5px solid #4277FF;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+#reset{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 24px;
+    top: 428px;
+
+    background: #FFFFFF;
+    /* Blue */
+
+    border: 1.5px solid #4277FF;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.label-numberIn{
+    position: absolute;
+    width: 120px;
+    height: 24px;
+    left: 50px;
+    top: 292px;
+
+    /* 16/16 Semi */
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    display: flex;
+    align-items: center;
+
+    /* Gray/$-gray-500 */
+
+    color: #282739;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 4px;
+}
+
+.numberIn{
+    position: absolute;
+    width: 120px;
+    height: 24px;
+    left: 180px;
+    top: 289px;
+
+    /* 16/16 Semi */
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    display: flex;
+    align-items: center;
+
+    /* Gray/$-gray-500 */
+
+    color: #282739;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 4px;
+}
+
+.p-numberIn{
+    position: absolute;
+    width: 120px;
+    height: 24px;
+    left: 320px;
+    top: 292px;
+
+    /* 16/16 Semi */
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    display: flex;
+    align-items: center;
+
+    /* Gray/$-gray-500 */
+
+    color: #282739;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 4px;
+}
+
+.numberOut{
+    position: absolute;
+    width: 120px;
+    height: 24px;
+    left: 380px;
+    top: 289px;
+
+    /* 16/16 Semi */
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    display: flex;
+    align-items: center;
+
+    /* Gray/$-gray-500 */
+
+    color: #282739;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 4px;
+}
+
+.numberIn2{
+    position: absolute;
+    width: 120px;
+    height: 24px;
+    left: 180px;
+    top: 339px;
+
+    /* 16/16 Semi */
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    display: flex;
+    align-items: center;
+
+    /* Gray/$-gray-500 */
+
+    color: #282739;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 4px; 
+}
+
+.numberIn3{
+    position: absolute;
+    width: 120px;
+    height: 24px;
+    left: 180px;
+    top: 389px;
+
+    /* 16/16 Semi */
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    display: flex;
+    align-items: center;
+
+    /* Gray/$-gray-500 */
+
+    color: #282739;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 4px; 
+}
+
+.label-Prefix{
+    position: absolute;
+    width: 120px;
+    height: 24px;
+    left: 50px;
+    top: 339px;
+
+    /* 16/16 Semi */
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    display: flex;
+    align-items: center;
+
+    /* Gray/$-gray-500 */
+
+    color: #282739;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 4px;
+}
+
+.label-Surfix{
+    position: absolute;
+    width: 120px;
+    height: 24px;
+    left: 50px;
+    top: 389px;
+
+    /* 16/16 Semi */
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    display: flex;
+    align-items: center;
+
+    /* Gray/$-gray-500 */
+
+    color: #282739;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 4px;
+}
+
+.label-Reset{
+    position: absolute;
+    width: 120px;
+    height: 24px;
+    left: 50px;
+    top: 429px;
+
+    /* 16/16 Semi */
+
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    display: flex;
+    align-items: center;
+
+    /* Gray/$-gray-500 */
+
+    color: #282739;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 4px;
+}
