@@ -29,7 +29,7 @@
   </div>
 
   <div>
-      <form action="{{route('searchDevice')}}" method="GET">
+      <form action="{{route('searchService')}}" method="GET">
           <p class="title-search">Từ khóa</p>
           <input class="inputSearch" type="text" name="search" value="" placeholder="Nhập từ khóa" />
           <button type="submit" class="button-search"><i class="fas fa-search"></i></button>
@@ -37,7 +37,7 @@
   </div>
 
   <div>
-    <a href="{{route('addDevice')}}"><img src="admin/assets/images/addservice.png" alt="right" class="add-button"></a>
+    <a href="{{route('addService')}}"><img src="admin/assets/images/addservice.png" alt="right" class="add-button"></a>
   </div>
 
          @if(Session::has('mes'))
@@ -59,16 +59,25 @@
               </tr>
           </thead>
           <tbody>
-            
-            <tr>
-                <td class="table-row">sf</td>
-                <td class="table-row">f</td>
-                <td class="table-row">ff</td>
-                <td class="table-row">ff</td>
-                <td class="table-row"><a href="#">Chi tiết</a></td>
-                <td class="table-row"><a href="#">Cập nhật</a></td>
-              </tr>
-            
+            @foreach ($service as $service)
+              <tr>
+                  <td class="table-row">{{$service->id}}</td>
+                  <td class="table-row">{{$service->name}}</td>
+                  <td class="table-row">{{$service->description}}</td>
+                  <td class="table-row">
+                    <?php
+                    if($service->status==0)
+                    {
+                      echo "<i class='fas fa-circle' style='color:red'></i>"."Ngưng hoạt động";
+                    }else{
+                      echo "<i class='fas fa-circle' style='color:green'></i>". "Hoạt động";
+                    }
+                  ?>
+                  </td>
+                  <td class="table-row"><a href="{{route('detailsService',$service->id)}}">Chi tiết</a></td>
+                  <td class="table-row"><a href="{{route('editService',$service->id)}}">Cập nhật</a></td>
+                </tr>
+            @endforeach
           </tbody>
       </table>
 

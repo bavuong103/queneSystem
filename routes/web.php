@@ -102,7 +102,37 @@ Route::get('service',[
     'uses'=>'App\Http\Controllers\ServiceController@service'
 ]);
 
+Route::get('searchService',[
+    'as'=>'searchService',
+    'uses'=>'App\Http\Controllers\ServiceController@searchService'
+]);
+
 Route::get('addService',[
     'as'=>'addService',
     'uses'=>'App\Http\Controllers\ServiceController@getAddService'
+]);
+
+Route::post('addService',[
+    'as'=>'addService',
+    'uses'=>'App\Http\Controllers\ServiceController@postAddService'
+]);
+
+Route::get('detailsService',[
+    'as'=>'detailsService',
+    'uses'=>'App\Http\Controllers\ServiceController@getdetailsService'
+]);
+
+Route::get('editService/{id}',[
+    'as'=>'editService',
+    'uses'=>'App\Http\Controllers\ServiceController@getEditService'
+]);
+
+Route::post('editService/{id}',[
+    'as'=>'editService',
+    'uses'=>'App\Http\Controllers\ServiceController@postEditService'
+]);
+
+Route::get('detailsService/{id}',[
+    'as'=>'detailsService',
+    'uses'=>'App\Http\Controllers\ServiceController@getDetailsService'
 ]);

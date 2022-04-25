@@ -26,25 +26,25 @@
   <div class="main">
         <p class="info-device">Thông tin dịch vụ</p>
 
-            {{-- @if(count($errors)>0)
+            @if(count($errors)>0)
                 <div class="alert alert-danger">
                     @foreach($errors->all() as $err)
                         {{$err}}
                     @endforeach
                 </div>
-            @endif --}}
+            @endif
 
-        <form action="{{route('addService')}}" method="POST">
+        <form action="{{route('editService',$service->id)}}" method="POST">
             @csrf
 
             <div>
                 <label class="id-device">Mã dịch vụ: <span style="color:red">*</span></label>
-                <input type="text" name="id" class="form-control1" placeholder="Nhập mã dịch vụ"/>    
+                <input type="text" name="id" class="form-control1" value="{{$service->id}}" placeholder="Nhập mã dịch vụ"/>    
             <div>
 
             <div>
                 <label class="name-device">Tên dịch vụ: <span style="color:#FF4747;">*</span></label>
-                <input type="text" name="name" class="form-control2" placeholder="Nhập tên dịch vụ"/>    
+                <input type="text" name="name" class="form-control2" value="{{$service->name}}" placeholder="Nhập tên dịch vụ"/>    
             <div>
 
             {{-- <div>
@@ -68,7 +68,7 @@
 
             <div>
                 <label class="title-action2">Mô tả:</label>
-                <textarea type="text" name="description" class="form-control7" placeholder="Mô tả dịch vụ"></textarea>    
+                <textarea type="text" name="description" class="form-control7" value="{{$service->description}}" >{{$service->description}}</textarea>    
             <div> 
 
             <p class="role">Quy tắc cấp số</p>
@@ -100,7 +100,7 @@
             <div>
                 <a href="{{route('service')}}" class="cancel-button" >  <p class="p-cancel">Hủy bỏ</p></a>
          
-                <button type="submit" class="continue-button" id="button-login"> <span class="submit-add"> Thêm dịch vụ</span></button>
+                <button type="submit" class="continue-button" id="button-login"> <span class="submit-add"> Cập nhật</span></button>
             </div>
 
         </form>

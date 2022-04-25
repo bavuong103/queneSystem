@@ -69,7 +69,7 @@ class DeviceController extends Controller
     public function postAddDevice(Request $req){
         $this->validate($req,
             [
-                'id'=>'required|unique:device,name',
+                'id'=>'required|unique:device,id',
                 'name'=>'required|unique:device,name',
                 'addressIP'=>'required',
                 'service'=>'required',
@@ -119,6 +119,7 @@ class DeviceController extends Controller
     {
         $device = Device::find($id);
 
+        $device->id = $req->id;
         $device->name = $req->name;
         $device->addressIP = $req->ip;
         $device->service = $req->service;

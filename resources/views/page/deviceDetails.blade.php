@@ -10,7 +10,7 @@
       <h2 class="title">Quản lý thiết bị</h2>
 
       <div>
-        <a href=""><img src="admin/assets/images/update.png" alt="right" class="update-button"></a>
+        <a href="{{route('editDevice',$device->id)}}"><img src="admin/assets/images/update.png" alt="right" class="update-button"></a>
       </div>
 
 
