@@ -22,10 +22,13 @@
   </div>
 
   <div>
-    <p class="title-connect">Chọn thời gian</p>
-    <input class="inputTimeIn" type="date" name="timeIn" value="" />
-    <img src="admin/assets/images/tg.png" alt="right" class="tg">
-    <input class="inputTimeOut" type="date" name="timeOut" value="" />
+    <form action="{{route('searchTime')}}" method="GET">
+      <p class="title-connect">Chọn thời gian</p>
+      <input class="inputTimeIn" type="date" name="timeIn" value="" />
+      <img src="admin/assets/images/tg.png" alt="right" class="tg">
+      <input class="inputTimeOut" type="date" name="timeOut" value="" />
+      <button type="submit" class="button-time"><i class="fas fa-search"></i></button>
+    </form>
   </div>
 
   <div>

@@ -25,7 +25,7 @@
 
     <div id="menu"> <!--Start the unordered list after the opening menu division -->
         <ul>
-          <li><a href="#">Dashboard</a></li>
+          <li><a href="{{route('dashboard')}}">Dashboard</a></li>
           <li><a href="{{route('device')}}">Thiết bị</a></li>
           <li><a href="{{route('service')}}">Dịch vụ</a></li>
           <li><a href="#">Cấp số</a></li>

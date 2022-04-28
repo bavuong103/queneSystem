@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Service;
 
+use Illuminate\Support\Facades\DB;
+
 
 class ServiceController extends Controller
 {
@@ -102,5 +104,14 @@ class ServiceController extends Controller
         
         $service->save();
         return redirect()->route('service')->with("mes","Sửa thông tin dịch vụ thành công");
+    }
+
+    public function searchTime(Request $req)
+    {
+        $timeIn = $req->timeIn;
+        $timeOut = $req->timeOut;
+        $service = DB::table('service')->whereBetween('created_at', [$timeIn, $timeOut])
+        ->get();
+        return view('page.service',compact('service'));
     }
 }

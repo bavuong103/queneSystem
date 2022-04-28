@@ -62,6 +62,11 @@ Route::get('index',[
     'uses'=>'App\Http\Controllers\HomeController@index'
 ]);
 
+Route::get('dashboard',[
+    'as'=>'dashboard',
+    'uses'=>'App\Http\Controllers\HomeController@dashboard'
+]);
+
 Route::get('device',[
     'as'=>'device',
     'uses'=>'App\Http\Controllers\DeviceController@device'
@@ -135,4 +140,9 @@ Route::post('editService/{id}',[
 Route::get('detailsService/{id}',[
     'as'=>'detailsService',
     'uses'=>'App\Http\Controllers\ServiceController@getDetailsService'
+]);
+
+Route::get('searchTime',[
+    'as'=>'searchTime',
+    'uses'=>'App\Http\Controllers\ServiceController@searchTime'
 ]);
