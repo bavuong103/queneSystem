@@ -146,3 +146,18 @@ Route::get('searchTime',[
     'as'=>'searchTime',
     'uses'=>'App\Http\Controllers\ServiceController@searchTime'
 ]);
+
+Route::get('number',[
+    'as'=>'number',
+    'uses'=>'App\Http\Controllers\NumberController@number'
+]);
+
+Route::get('addNumber',[
+    'as'=>'addNumber',
+    'uses'=>'App\Http\Controllers\NumberController@getAddNumber'
+]);
+
+Route::get('detailsNumber',[
+    'as'=>'detailsNumber',
+    'uses'=>'App\Http\Controllers\NumberController@getdetailsNumber'
+]);

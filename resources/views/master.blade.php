@@ -28,7 +28,7 @@
           <li><a href="{{route('dashboard')}}">Dashboard</a></li>
           <li><a href="{{route('device')}}">Thiết bị</a></li>
           <li><a href="{{route('service')}}">Dịch vụ</a></li>
-          <li><a href="#">Cấp số</a></li>
+          <li><a href="{{route('number')}}">Cấp số</a></li>
           <li><a href="#">Báo cáo</a></li>
           <li><a href="#">Cài đặt hệ thống</a></li>
         </ul>  
