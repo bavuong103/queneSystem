@@ -11,42 +11,39 @@
 
   <div>
       <p class="title-action">Tên dịch vụ</p>
-      <select class="select-nameService" id="sortAction">
-        {{-- <option value="{{Request::url()}}?sort_by=none" {{ $_GET['sort_by']=='none' ? 'selected' : '' }}>Tất cả</option>
-        <option value="{{Request::url()}}?sort_by=action" {{  $_GET['sort_by']=='action' ? 'selected' : ''}} >Hoạt động</option>
-        <option value="{{Request::url()}}?sort_by=no-action" {{ $_GET['sort_by']=='no-action' ? 'selected' :  '' }}>Ngưng hoạt động</option> --}}
-        <option value="{{Request::url()}}?sort_by=none" >Tất cả</option>
-        <option value="{{Request::url()}}?sort_by=action"  >Hoạt động</option>
-        <option value="{{Request::url()}}?sort_by=no-action" >Ngưng hoạt động</option>
+      <select class="select-nameService" id="sortService">
+        
+        <option value="{{Request::url()}}?sort_by=noneService" >Tất cả</option>
+        <option value="{{Request::url()}}?sort_by=heart"  >Khám tim mạch</option>
+        <option value="{{Request::url()}}?sort_by=gynecological"  >Khám sản - phụ khoa</option>
+        <option value="{{Request::url()}}?sort_by=dentomaxillofacia" >Khám răng hàm mặt</option>
+        <option value="{{Request::url()}}?sort_by=ear" >Khám tai mũi họng</option>
       </select>
   </div>
 
   <div>
     <p class="title-action4">Tình trạng</p>
-    <select class="select-Status" id="sortAction">
-      {{-- <option value="{{Request::url()}}?sort_by=none" {{ $_GET['sort_by']=='none' ? 'selected' : '' }}>Tất cả</option>
-      <option value="{{Request::url()}}?sort_by=action" {{  $_GET['sort_by']=='action' ? 'selected' : ''}} >Hoạt động</option>
-      <option value="{{Request::url()}}?sort_by=no-action" {{ $_GET['sort_by']=='no-action' ? 'selected' :  '' }}>Ngưng hoạt động</option> --}}
-      <option value="{{Request::url()}}?sort_by=none" >Tất cả</option>
-      <option value="{{Request::url()}}?sort_by=action"  >Hoạt động</option>
-      <option value="{{Request::url()}}?sort_by=no-action" >Ngưng hoạt động</option>
+    <select class="select-Status" id="sortStatus">
+      
+      <option value="{{Request::url()}}?sort_by_status=none" >Tất cả</option>
+      <option value="{{Request::url()}}?sort_by_status=waiting"  >Đang chờ</option>
+      <option value="{{Request::url()}}?sort_by_status=used" >Đã sử dụng</option>
+      <option value="{{Request::url()}}?sort_by_status=next" >Bỏ qua</option>
     </select>
 </div>
 
 <div>
     <p class="title-action5">Nguồn cấp</p>
-    <select class="select-original" id="sortAction">
-      {{-- <option value="{{Request::url()}}?sort_by=none" {{ $_GET['sort_by']=='none' ? 'selected' : '' }}>Tất cả</option>
-      <option value="{{Request::url()}}?sort_by=action" {{  $_GET['sort_by']=='action' ? 'selected' : ''}} >Hoạt động</option>
-      <option value="{{Request::url()}}?sort_by=no-action" {{ $_GET['sort_by']=='no-action' ? 'selected' :  '' }}>Ngưng hoạt động</option> --}}
-      <option value="{{Request::url()}}?sort_by=none" >Tất cả</option>
-      <option value="{{Request::url()}}?sort_by=action"  >Hoạt động</option>
-      <option value="{{Request::url()}}?sort_by=no-action" >Ngưng hoạt động</option>
+    <select class="select-original" id="sortOriginal">
+      
+      <option value="{{Request::url()}}?sort_by_original=none" >Tất cả</option>
+      <option value="{{Request::url()}}?sort_by_original=kiosk"  >Kiosk</option>
+      <option value="{{Request::url()}}?sort_by_original=system" >Hệ thống</option>
     </select>
 </div>
 
   <div>
-    <form action="{{route('searchTime')}}" method="GET">
+    <form action="{{route('searchTimeNumber')}}" method="GET">
       <p class="title-connect2">Chọn thời gian</p>
       <input class="inputTimeIn3" type="date" name="timeIn" value="" />
       <img src="admin/assets/images/tg.png" alt="right" class="tg3">
@@ -56,7 +53,7 @@
   </div>
 
   <div>
-      <form action="{{route('searchService')}}" method="GET">
+      <form action="{{route('searchNumber')}}" method="GET">
           <p class="title-search">Từ khóa</p>
           <input class="inputSearch" type="text" name="search" value="" placeholder="Nhập từ khóa" />
           <button type="submit" class="button-search"><i class="fas fa-search"></i></button>
@@ -107,7 +104,8 @@
                         </td>
                         <td class="table-row">{{$number->created_at}}</td>
                         <td class="table-row">{{$number->dateUsed}}</td>
-                        <td class="table-row"> <?php
+                        <td class="table-row"> 
+                          <?php
                           if($number->status==1)
                           {
                             echo "Đang chờ";
@@ -116,9 +114,10 @@
                           }else if($number->status==3){
                             echo "Bỏ qua";
                           }
-                        ?></td>
+                        ?>
+                        </td>
                         <td class="table-row">{{$number->original}}</td>
-                        <td class="table-row"><a href="{{route('detailsNumber')}}">Chi tiết</a></td>
+                        <td class="table-row"><a href="{{route('detailsNumber',$number->id)}}">Chi tiết</a></td>
                     </tr>
                   @endforeach
                 </tbody>

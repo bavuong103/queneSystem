@@ -157,7 +157,27 @@ Route::get('addNumber',[
     'uses'=>'App\Http\Controllers\NumberController@getAddNumber'
 ]);
 
-Route::get('detailsNumber',[
+Route::get('detailsNumber/{id}',[
     'as'=>'detailsNumber',
     'uses'=>'App\Http\Controllers\NumberController@getdetailsNumber'
+]);
+
+Route::post('addNumber',[
+    'as'=>'addNumber',
+    'uses'=>'App\Http\Controllers\NumberController@postAddNumber'
+]);
+
+Route::get('searchNumber',[
+    'as'=>'searchNumber',
+    'uses'=>'App\Http\Controllers\NumberController@searchNumber'
+]);
+
+Route::get('searchTimeNumber',[
+    'as'=>'searchTimeNumber',
+    'uses'=>'App\Http\Controllers\NumberController@searchTimeNumber'
+]);
+
+Route::get('report',[
+    'as'=>'report',
+    'uses'=>'App\Http\Controllers\ReportController@report'
 ]);

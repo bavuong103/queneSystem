@@ -34,40 +34,62 @@
 
         <div>
             <label class="mathietbi-label"> Họ tên: </label>
-            <p class="mathietbi-content">a</p>
+            <p class="mathietbi-content" style="width:100px">{{$number->fullname}}</p>
         </div>
       
         <div>
             <label class="tenthietbi-label"> Tên dịch vụ: </label>
-            <p class="tenthietbi-content">b</p>
+            <p class="tenthietbi-content" style="width:200px"><?php
+              if($number->service==1)
+              {
+                echo "Khám tim mạch";
+              }else if($number->service==2){
+                echo "Khám sản - Phụ khoa";
+              }else if($number->service==3){
+                echo "Khám răng hàm mặt";
+              }else if($number->service==4){
+                echo "Khám tai mũi họng";
+              }
+            ?></p>
         </div>
         <div>
             <label class="ipthietbi-label"> Số thứ tự: </label>
-            <p class="ipthietbi-content">c</p>
+            <p class="ipthietbi-content" style="width:100px">{{$number->id}}</p>
         </div>
         <div>
             <label class="dvthietbi-label"> Thời gian cấp: </label>
-            <p class="dvthietbi-content2">z</p>
+            <p class="dvthietbi-content2" style="width:200px">{{$number->created_at}}</p>
         </div>
         <div>
             <label class="dvthietbi-label2"> Hạn sử dụng: </label>
-            <p class="dvthietbi-content3">b</p>
+            <p class="dvthietbi-content3" style="width:200px">{{$number->dateUsed}}</p>
         </div>
         <div>
             <label class="loaithietbi-label"> Nguồn cấp: </label>
-            <p class="loaithietbi-content">c</p>
+            <p class="loaithietbi-content" style="width:100px">{{$number->original}}</p>
         </div>
         <div>
             <label class="tkthietbi-label"> Trạng thái: </label>
-            <p class="tkthietbi-content">d</p>
+            <p class="tkthietbi-content" style="width:100px">
+              <?php
+                          if($number->status==1)
+                          {
+                            echo "Đang chờ";
+                          }else if($number->status==2){
+                            echo "Đã sử dụng";
+                          }else if($number->status==3){
+                            echo "Bỏ qua";
+                          }
+                        ?>
+            </p>
         </div>
         <div>
             <label class="mkthietbi-label"> Số điện thoại: </label>
-            <p class="mkthietbi-content">n</p>
+            <p class="mkthietbi-content" style="width:100px">{{$number->phone}}</p>
         </div>
         <div>
             <label class="mkthietbi-label2"> Địa chỉ email: </label>
-            <p class="mkthietbi-content2">n</p>
+            <p class="mkthietbi-content2" style="width:100px">{{$number->email}}</p>
         </div>
 
   </div>

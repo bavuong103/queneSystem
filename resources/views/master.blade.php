@@ -29,7 +29,7 @@
           <li><a href="{{route('device')}}">Thiết bị</a></li>
           <li><a href="{{route('service')}}">Dịch vụ</a></li>
           <li><a href="{{route('number')}}">Cấp số</a></li>
-          <li><a href="#">Báo cáo</a></li>
+          <li><a href="{{route('report')}}">Báo cáo</a></li>
           <li><a href="#">Cài đặt hệ thống</a></li>
         </ul>  
     </div>
@@ -85,6 +85,64 @@
     });
 
     </script>
+
+  <script type="text/javascript">
+    $(document).ready(function($) { 
+    //alert("hello");
+    
+
+    $('#sortService').on('change',function(){
+      var url = $(this).val();
+      //alert(url);
+
+      if(url)
+      {
+        window.location = url;
+      }
+      return false;
+    });
+  });
+
+  </script>
+
+  <script type="text/javascript">
+    $(document).ready(function($) { 
+    //alert("hello");
+    
+
+    $('#sortStatus').on('change',function(){
+      var url = $(this).val();
+      //alert(url);
+
+      if(url)
+      {
+        window.location = url;
+      }
+      return false;
+    });
+  });
+
+  </script>
+
+
+  <script type="text/javascript">
+    $(document).ready(function($) { 
+    //alert("hello");
+    
+
+    $('#sortOriginal').on('change',function(){
+      var url = $(this).val();
+      //alert(url);
+
+      if(url)
+      {
+        window.location = url;
+      }
+      return false;
+    });
+  });
+
+  </script>
 
      
 

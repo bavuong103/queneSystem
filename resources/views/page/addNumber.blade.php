@@ -35,10 +35,10 @@
                 </div>
             @endif --}}
 
-        <form action="{{route('addService')}}" method="POST">
+        <form action="{{route('addNumber')}}" method="POST">
             @csrf
 
-            <select class="select-original" id="sortAction" style="left:500px;top:150px">
+            <select name="typeService" class="select-original"  style="left:500px;top:150px">
 
                 <option value="1" >Khám tim mạch</option>
                 <option value="2"  >Khám sản - phụ khoa</option>
