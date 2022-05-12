@@ -181,3 +181,23 @@ Route::get('report',[
     'as'=>'report',
     'uses'=>'App\Http\Controllers\ReportController@report'
 ]);
+
+Route::get('searchTimeReport',[
+    'as'=>'searchTimeReport',
+    'uses'=>'App\Http\Controllers\ReportController@searchTimeReport'
+]);
+
+Route::get('printReport',[
+    'as'=>'printReport',
+    'uses'=>'App\Http\Controllers\ReportController@printReport'
+]);
+
+Route::get('role',[
+    'as'=>'role',
+    'uses'=>'App\Http\Controllers\RoleController@role'
+]);
+
+Route::get('addRole',[
+    'as'=>'addRole',
+    'uses'=>'App\Http\Controllers\RoleController@addRole'
+]);

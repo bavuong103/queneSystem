@@ -30,7 +30,7 @@
           <li><a href="{{route('service')}}">Dịch vụ</a></li>
           <li><a href="{{route('number')}}">Cấp số</a></li>
           <li><a href="{{route('report')}}">Báo cáo</a></li>
-          <li><a href="#">Cài đặt hệ thống</a></li>
+          <li><a href="{{route('role')}}">Cài đặt hệ thống</a></li>
         </ul>  
     </div>
 

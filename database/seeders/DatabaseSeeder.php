@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Facade\FlareClient\Report;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,7 +19,8 @@ class DatabaseSeeder extends Seeder
             //UserSeeder::class,
             //DeviceSeeder::class,
             //ServiceSeeder::class,
-            NumberSeeder::class
+            //NumberSeeder::class,
+            ReportSeeder::class
         ]);
     }
 }

@@ -1,34 +1,16 @@
 @extends('master')
 @section('content')
-  <div >
-    <p class="title-left"> Báo cáo > </p>
-    <p class="title-right">Lập báo cáo</p>
-  </div>
+  
+
+<div class="action-buttons" id="printPageButton">
+    <a class="btn bg-white btn-light mx-1px text-95" href="#" onclick="window.print()">
+        <i class="mr-1 fa fa-print text-primary-m1 text-120 w-2"></i>
+        In pdf
+    </a>
+</div>
 
   <div>
-    <form action="{{route('searchTimeReport')}}" method="GET">
-      <p class="title-connect2" style="top:100px; left:30px">Chọn thời gian</p>
-      <input class="inputTimeIn3" type="date" name="timeIn" value="" style="top:150px; left:30px" />
-      <img src="admin/assets/images/tg.png" alt="right" class="tg3" style="top:165px; left:190px">
-      <input class="inputTimeOut3" type="date" name="timeOut" value="" style="top:150px; left:230px" />
-      <button type="submit" class="button-time3" style="top:150px; left:390px"><i class="fas fa-search"></i></button>
-    </form>
-  </div>
-
-
-  <div>
-    <a href="{{route('printReport')}}"><img src="admin/assets/images/print.png" alt="right" class="add-button" style="left:1150px; top:220px"></a>
-  </div>
-
-
-
-         {{-- @if(Session::has('mes'))
-              <div class="alert alert-success">{{Session::get('mes')}}</div>
-              {{Session::put('mes',null)}}
-          @endif --}}
-
-  <div>
-      <table class="table" style="top:220px">
+      <table class="table" style="top:50px">
           <thead>
               <tr class="">
                   <th class="table-title2"><p class="style-title">Số thứ tự</p></th>
@@ -81,27 +63,6 @@
           </tbody>
       </table>
 
-      <a href=""><img src="admin/assets/images/previous-button.png" alt="right" class="previous-button"></a>
-      <a href="" class="button-page1">1</a>
-      <a href="" class="button-page2">2</a>
-      <a href="" class="button-page3">3</a>
-      <a href="" class="button-page4">4</a>
-      <a href="" class="button-pagevvv">...</a>
-      <a href="" class="button-page10">10</a>
-      <a href=""><img src="admin/assets/images/next-button.png" alt="right" class="next-button"></a>
-  </div>
-
-  <div>
-    <img src="admin/assets/images/chuong.png" alt="right" class="chuong">
-  </div>
-  <div>
-    <a href="{{route('personnalAccount')}}"><img src="admin/assets/images/avatar-mini.png" alt="right" class="mini"></a>
-  </div>
-  <div>
-    <p class="hello">Xin Chào</p>
-  </div>
-  <div>
-    <h2 class="name-hello">{{Auth::user()->fullname}}</h2>
-  </div>
+      
 
   @endsection
