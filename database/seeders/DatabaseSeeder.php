@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             //DeviceSeeder::class,
             //ServiceSeeder::class,
             //NumberSeeder::class,
-            ReportSeeder::class
+            //ReportSeeder::class,
+            RoleSeeder::class
         ]);
     }
 }

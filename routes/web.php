@@ -201,3 +201,23 @@ Route::get('addRole',[
     'as'=>'addRole',
     'uses'=>'App\Http\Controllers\RoleController@addRole'
 ]);
+
+Route::post('addRole',[
+    'as'=>'addRole',
+    'uses'=>'App\Http\Controllers\RoleController@postAddRole'
+]);
+
+Route::get('searchRole',[
+    'as'=>'searchRole',
+    'uses'=>'App\Http\Controllers\RoleController@searchRole'
+]);
+
+Route::get('editRole/{id}',[
+    'as'=>'editRole',
+    'uses'=>'App\Http\Controllers\RoleController@getEditRole'
+]);
+
+Route::post('editRole/{id}',[
+    'as'=>'editRole',
+    'uses'=>'App\Http\Controllers\RoleController@postEditRole'
+]);

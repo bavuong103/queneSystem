@@ -1,8 +1,8 @@
 @extends('master')
 @section('content')
   <div >
-    <p class="title-left"> Cài đặt hệ thống > </p>
-    <p class="title-right">Quản lý vai trò</p>
+    <p class="title-left" style="width:200px"> Cài đặt hệ thống > </p>
+    <p class="title-right" style="left:200px">Quản lý vai trò</p>
   </div>
 
   <div>
@@ -12,7 +12,7 @@
   
 
   <div>
-      <form action="{{route('searchService')}}" method="GET">
+      <form action="{{route('searchRole')}}" method="GET">
           <p class="title-search">Từ khóa</p>
           <input class="inputSearch" type="text" name="search" value="" placeholder="Nhập từ khóa" />
           <button type="submit" class="button-search"><i class="fas fa-search"></i></button>
@@ -39,7 +39,19 @@
               </tr>
           </thead>
           <tbody>
-           
+            @foreach ($role as $role)
+            <tr>
+                <td class="table-row">{{$role->name}}</td>
+             
+                <td class="table-row">
+                  {{$role->number}}
+                </td>
+                <td class="table-row">{{$role->description}}</td>
+                
+                <td class="table-row"><a href="{{route('editRole',$role->id)}}">Cập nhật</a></td>
+               
+            </tr>
+          @endforeach
           </tbody>
       </table>
 

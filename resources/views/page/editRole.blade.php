@@ -3,7 +3,7 @@
 <div >
     <p class="title-left" style="width:200px"> Cài đặt hệ thống > </p>
     <p class="title-right2" style="width:200px; left:180px">Quản lý vai trò ></p>
-    <p class="title-right3" style="width:200px; left:330px">Thêm vai trò</p>
+    <p class="title-right3" style="width:200px; left:330px">Sửa vai trò</p>
   </div>
 
   <div>
@@ -34,17 +34,17 @@
                 </div>
             @endif --}}
 
-        <form action="{{route('addRole')}}" method="POST">
+        <form action="{{route('editRole',$role->id)}}" method="POST">
             @csrf
 
             <div>
                 <label class="id-device">Tên vai trò: <span style="color:red">*</span></label>
-                <input type="text" name="name" class="form-control1" placeholder="Nhập tên vai trò"/>    
+                <input type="text" name="name" class="form-control1" value="{{$role->name}}" placeholder="Nhập tên vai trò"/>    
             <div>
 
             <div>
                 <label class="name-device">Mô tả: <span style="color:#FF4747;">*</span></label>
-                <textarea type="text" name="description" class="form-control7" style="left:20px; top:200px; width:400px" placeholder="Nhập Mô tả"> </textarea>  
+                <textarea type="text" name="description" class="form-control7" value="{{$role->description}}" style="left:20px; top:200px; width:400px" placeholder="Nhập Mô tả">{{$role->description}} </textarea>  
             <div>
 
            
@@ -85,7 +85,7 @@
             <div>
                 <a href="{{route('device')}}" class="cancel-button" >  <p class="p-cancel">Hủy bỏ</p></a>
          
-                <button type="submit" class="continue-button" id="button-login"> <span class="submit-add"> Thêm</span></button>
+                <button type="submit" class="continue-button" id="button-login"> <span class="submit-add"> Cập nhật</span></button>
             </div>
 
         </form>
