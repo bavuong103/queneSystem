@@ -31,6 +31,7 @@
           <li><a href="{{route('number')}}">Cấp số</a></li>
           <li><a href="{{route('report')}}">Báo cáo</a></li>
           <li><a href="{{route('role')}}">Cài đặt hệ thống</a></li>
+          <li><a href="{{route('account')}}">Quản lý tài khoản</a></li>
         </ul>  
     </div>
 
@@ -143,6 +144,25 @@
   });
 
   </script>
+
+<script type="text/javascript">
+  $(document).ready(function($) { 
+  //alert("hello");
+  
+
+  $('#sortRole').on('change',function(){
+    var url = $(this).val();
+    //alert(url);
+
+    if(url)
+    {
+      window.location = url;
+    }
+    return false;
+  });
+});
+
+</script>
 
      
 

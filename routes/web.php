@@ -217,7 +217,17 @@ Route::get('editRole/{id}',[
     'uses'=>'App\Http\Controllers\RoleController@getEditRole'
 ]);
 
-Route::post('editRole/{id}',[
-    'as'=>'editRole',
-    'uses'=>'App\Http\Controllers\RoleController@postEditRole'
+Route::get('account',[
+    'as'=>'account',
+    'uses'=>'App\Http\Controllers\AccountController@Account'
+]);
+
+Route::get('addAccount',[
+    'as'=>'addAccount',
+    'uses'=>'App\Http\Controllers\AccountController@addAccount'
+]);
+
+Route::get('searchAccount',[
+    'as'=>'searchAccount',
+    'uses'=>'App\Http\Controllers\AccountController@searchAccount'
 ]);

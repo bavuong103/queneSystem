@@ -59,7 +59,7 @@
 
             <div>
                 <p class="title-action2">Loại thiết bị <span style="color:#FF4747;">*</span></p>
-                <select class="select-action2" name="category">
+                <select class="select-action2" name="category" style="left:550px;top:100px">
                     <option value="0" selected>Chọn loại thiết bị</option>
                     <option value="Kiosk">Kiosk</option>
                     <option value="Display counter">Display counter</option>

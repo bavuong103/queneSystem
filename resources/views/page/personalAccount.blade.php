@@ -30,13 +30,13 @@
         <div ><label class="email">Email:</label>
           <input type="text" name="email" class="form-control-email" value="{{Auth::user()->email}}" readonly><br>
         </div>
-        <div ><label class="username">Tên đăng nhập</label>
+        <div ><label class="username" style="top:60px;left:900px">Tên đăng nhập</label>
           <input type="text" name="username" class="form-control-username" value="{{Auth::user()->username}}"readonly><br>
         </div>
-        <div ><label class="password">Mật khẩu</label>
+        <div ><label class="password" style="top:160px;left:900px">Mật khẩu</label>
           <input type="text" name="password" class="form-control-password" value="{{Auth::user()->password}}" readonly><br>
         </div>
-        <div ><label class="role">Vai trò</label>
+        <div ><label class="role" style="top:260px;left:900px">Vai trò</label>
           <input type="text" name="role" class="form-control-role" value="{{Auth::user()->role}}" readonly><br>
         </div>
     </div>

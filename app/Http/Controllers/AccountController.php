@@ -82,4 +82,47 @@ class AccountController extends Controller
         Auth::logout();
         return view('page.login');
     }
+
+    public function Account()
+    {
+        $account = User::where('id','<>',0)->get();
+        // sort
+        if(isset($_GET['sort_by']))
+        {
+             $sort_by = $_GET['sort_by'];
+             //echo $sort_by;
+
+             if($sort_by=='ketoan')
+             {
+                $account = User::where('role','Kế toán')->get();
+             }elseif($sort_by=='bacsi')
+             {
+                $account = User::where('role','Bác sĩ')->get();
+             }
+             elseif($sort_by=='letan')
+             {
+                $account = User::where('role','Lễ tân')->get();
+             }
+             elseif($sort_by=='none')
+             {
+                $account = User::where('id','<>',0)->get();
+
+             }
+
+        }
+
+        return view('page.account',compact('account'));
+    }
+
+    public function searchAccount(Request $req)
+    {
+        $account = User::where('fullname','like','%'.$req->search.'%')->get();
+        return view('page.account',compact('account'));
+    }
+
+    public function addAccount()
+    {
+        
+        return view('page.addAccount');
+    }
 }
