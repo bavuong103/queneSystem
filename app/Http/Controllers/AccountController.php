@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -85,7 +86,9 @@ class AccountController extends Controller
 
     public function Account()
     {
-        $account = User::where('id','<>',0)->get();
+        $account = User::where('users.id','<>',0)
+        ->join('role','users.role','=','role.id')
+        ->get(['users.*','role.name as role_name']);
         // sort
         if(isset($_GET['sort_by']))
         {
@@ -94,14 +97,20 @@ class AccountController extends Controller
 
              if($sort_by=='ketoan')
              {
-                $account = User::where('role','Kế toán')->get();
+                $account = User::where('role',1)        
+                ->join('role','users.role','=','role.id')
+                ->get(['users.*','role.name as role_name']);
              }elseif($sort_by=='bacsi')
              {
-                $account = User::where('role','Bác sĩ')->get();
+                $account = User::where('role',2)
+                ->join('role','users.role','=','role.id')
+                ->get(['users.*','role.name as role_name']);
              }
              elseif($sort_by=='letan')
              {
-                $account = User::where('role','Lễ tân')->get();
+                $account = User::where('role',3)
+                ->join('role','users.role','=','role.id')
+                ->get(['users.*','role.name as role_name']);
              }
              elseif($sort_by=='none')
              {
@@ -124,5 +133,44 @@ class AccountController extends Controller
     {
         
         return view('page.addAccount');
+    }
+
+    public function postAddAccount(Request $req)
+    {
+        
+        $account = new User();
+        //$account->id = $req->id;
+        $account->username = $req->username;
+        $account->password = Hash::make($req->password);
+        $account->email = $req->email;
+        $account->fullname = $req->fullname;
+        $account->phone = $req->phone;
+        $account->role = $req->role;
+        $account->status = $req->status;
+        // dd($product);
+        $account->save();
+
+        return redirect()->route('account')->with('mes','Thêm tài khoản thành công');
+    }
+
+    public function getEditAccount($id)
+    {
+        $role = Role::all();
+        $account = User::where('id',$id)->first();
+        return view('page.editAccount',compact('account','role'));
+    }
+
+    public function postEditAccount($id, Request $req){
+        $account = User::where('id',$id)->first();
+
+        $account->fullname = $req->fullname;
+        $account->phone = $req->phone;
+        $account->email = $req->email;
+        $account->role = $req->role;
+        $account->username = $req->username;
+        $account->status = $req->status;
+        
+        $account->save();
+        return redirect()->route('account')->with("mes","Sửa thông tin tài khoản thành công");
     }
 }

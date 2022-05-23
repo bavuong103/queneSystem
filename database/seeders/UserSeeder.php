@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
                 'email' => 'tuyetnguyen123@gmail.com',
                 'fullname' => 'Nguyen Văn A',
                 'phone' => '094564654',
-                'role' => 'Kế toán',
+                'role' => 1,
                 'status' => 1,
             ],
             [
@@ -31,7 +31,7 @@ class UserSeeder extends Seeder
                 'email' => 'tuyetnguyen1234@gmail.com',
                 'fullname' => 'Nguyen Văn B',
                 'phone' => '094564654',
-                'role' => 'Kế toán',
+                'role' => 1,
                 'status' => 1,
             ],
             [
@@ -40,7 +40,7 @@ class UserSeeder extends Seeder
                 'email' => 'tuyetnguyen222@gmail.com',
                 'fullname' => 'Nguyen Văn C',
                 'phone' => '094564654',
-                'role' => 'Kế toán',
+                'role' => 2,
                 'status' => 1,
             ]
         ]);

@@ -62,7 +62,7 @@
                 </td>
                 <td class="table-row">{{$account->phone}}</td>
                 <td class="table-row">{{$account->email}}</td>
-                <td class="table-row">{{$account->role}}</td>
+                <td class="table-row">{{$account->role_name}}</td>
                 <td class="table-row">
                   <?php
                     if($account->status==1)
@@ -73,7 +73,7 @@
                     }
                   ?>
                 </td>
-                <td class="table-row"><a href="{{route('editRole',$account->id)}}">Cập nhật</a></td>
+                <td class="table-row"><a href="{{route('editAccount',$account->id)}}">Cập nhật</a></td>
                
             </tr>
           @endforeach

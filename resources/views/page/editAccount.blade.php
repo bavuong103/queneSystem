@@ -34,47 +34,51 @@
                 </div>
             @endif --}}
 
-        <form action="{{route('addAccount')}}" method="POST">
+        <form action="{{route('editAccount',$account->id)}}" method="POST">
             @csrf
 
             <div>
                 <label class="id-device">Họ tên: <span style="color:red">*</span></label>
-                <input type="text" name="fullname" class="form-control1" placeholder="Nhập họ tên"/>    
+                <input type="text" name="fullname" class="form-control1" value={{$account->fullname}} placeholder="Nhập họ tên" />    
             <div>
 
             <div>
                 <label class="name-device">Số điện thoại: <span style="color:#FF4747;">*</span></label>
-                <input type="text" name="phone" class="form-control2" placeholder="Nhập số điện thoại"/>    
+                <input type="text" name="phone" class="form-control2" value={{$account->phone}} placeholder="Nhập số điện thoại"/>    
             <div>
 
             <div>
-                <label class="ip-device">Email: <span style="color:#FF4747;">*</span></label>
-                <input type="text" name="email" class="form-control3" placeholder="Nhập email"/>    
+                <label class="ip-device">Email: <span style="color:hsl(0, 100%, 64%);">*</span></label>
+                <input type="text" name="email" class="form-control3"  value={{$account->email}} placeholder="Nhập email"/>    
             <div>  
 
             <div>
                 <label class="service">Vai trò <span style="color:#FF4747;">*</span></label>
                 <select class="select-action2" name="role" style="left:20px;top:400px;width:300px">
-                    <option value="0" selected>Chọn vai trò</option>
-                    <option value="1">Kế toán</option>
-                    <option value="6">Quản lý</option>
-                    <option value="7">Admin</option>
+                    @foreach($role as $role)
+                        @if($role->id == $account->role)
+                            <option value="{{$role->id}}" selected>{{$role->name}}</option>
+                        @else
+                            <option value="{{$role->id}}">{{$role->name}}</option>
+                            @endif
+                                    
+                    @endforeach
                 </select>   
             <div>
 
             <div>
                 <p class="title-action2" style="width:200px">Tên đăng nhập <span style="color:#FF4747;">*</span></p>
-                <input type="text" name="username" class="form-control5" style="left:560px;top:90px" placeholder="Nhập tài khoản"/>  
+                <input type="text" name="username" class="form-control5" value={{$account->username}} style="left:560px;top:90px" placeholder="Nhập tài khoản"/>  
             </div>
 
             <div>
                 <label class="username">Mật khẩu: <span style="color:#FF4747;">*</span></label>
-                <input type="text" name="password" class="form-control5" placeholder="Nhập tài khoản"/>    
+                <input type="text" name="password" class="form-control5"   placeholder="Nhập tài khoản" readonly/>    
             <div> 
 
             <div>
                 <label class="password" style="width:200px">Nhập lại mật khẩu: <span style="color:#FF4747;">*</span></label>
-                <input type="text" name="re-password" class="form-control6" placeholder="Nhập mật khẩu"/>    
+                <input type="text" name="re-password" class="form-control6" placeholder="Nhập mật khẩu" readonly/>    
             <div>
 
             <div>
@@ -84,16 +88,25 @@
             <div>
                 <label class="service" style="left:560px;top:370px;width:300px">Trạng thái <span style="color:#FF4747;">*</span></label>
                 <select class="select-action2" name="status" style="left:560px;top:400px;width:300px">
-                    <option value="0" selected>Tất cả</option>
-                    <option value="1">Ngưng hoạt động</option>
-                    <option value="2">Hoạt động</option>
+                
+                        @if($account->status == 1)
+                            <option value="0">Tất cả</option>
+                            <option value="1" selected>Ngưng hoạt động</option>
+                            <option value="2">Hoạt động</option>
+                        @else
+                            <option value="0">Tất cả</option>
+                            <option value="1" >Ngưng hoạt động</option>
+                            <option value="2" selected >Hoạt động</option>
+                         @endif
+                                    
+                
                 </select>   
             <div>
 
             <div>
                 <a href="{{route('account')}}" class="cancel-button" >  <p class="p-cancel">Hủy bỏ</p></a>
          
-                <button type="submit" class="continue-button" id="button-login"> <span class="submit-add"> Thêm</span></button>
+                <button type="submit" class="continue-button" id="button-login"> <span class="submit-add"> Cập nhật</span></button>
             </div>
 
         </form>
